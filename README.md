@@ -1,4 +1,4 @@
-# Calendar App
+# Angular Event Calendar App
 
 A simple event calendar app built with angular 8
 
