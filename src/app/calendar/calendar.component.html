@@ -1,0 +1,39 @@
+<!-- <p>calendar works!</p> -->
+<div class="wrapper">
+  <div class="calendar">
+
+    <div class="controls">
+      <div class="prev" (click)="move_back_seven_days()">
+        <span>&#10094;&#10094;</span>
+      </div>
+      <div class="prev" (click)="move_back_one_day()">
+        <span>&#10094;</span>
+      </div>
+      <div>
+        <h2 id="current_day">{{ current_day }}</h2>
+        <p id="current_date_sub">{{ current_date_sub }}</p>
+      </div>
+      <div class="next" (click)="move_forward_one_day()">
+        <span>&#10095;</span>
+      </div>
+      <div class="next" (click)="move_forward_seven_days()">
+        <span>&#10095;&#10095;</span>
+      </div>
+    </div>
+
+    <div class="event_display">
+      <ng-template [ngIf]="event_wrapper" [ngIfElse]="no_event">
+        <ul class="event_wrapper">
+          <li class="event" *ngFor="let event of event_wrapper"> {{ event.title }} : {{ event.description }} </li>
+        </ul>
+      </ng-template>
+
+      <ng-template #no_event>
+        <ul class="event_wrapper">
+          <li class="event">No event for this day :(</li>
+        </ul>
+      </ng-template>
+
+    </div>
+  </div>
+</div>
